@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Loves Bhavishya</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 10%, #fad0c4 100%);
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+
+        .heart-background {
+            position: absolute;
+            width: 200px; /* Base size for small screens */
+            height: 200px; /* Base size for small screens */
+            background-color: #ff6b6b;
+            transform: rotate(-45deg);
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            margin-top: -100px; /* Adjust for perfect centering */
+            margin-left: -100px; /* Adjust for perfect centering */
+            animation: beat 1s infinite;
+            z-index: 1; /* Keep behind the text */
+        }
+
+        .heart-background::before,
+        .heart-background::after {
+            content: '';
+            position: absolute;
+            width: 200px; /* Base size for small screens */
+            height: 200px; /* Base size for small screens */
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .heart-background::before {
+            top: -100px;
+            left: 0;
+        }
+
+        .heart-background::after {
+            top: 0;
+            left: 100px;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 2; /* Bring text in front of the heart */
+            position: relative;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 10vw; /* Responsive size */
+            margin: 0;
+            text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        h2 {
+            font-size: 5vw; /* Responsive size */
+            margin: 10px 0 0;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b;
+            }
+            to {
+                text-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b, 0 0 50px #ff6b6b;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+
+        /* Media queries for larger screens */
+        @media (min-width: 768px) {
+            .heart-background {
+                width: 300px; /* Larger size for bigger screens */
+                height: 300px; /* Larger size for bigger screens */
+                margin-top: -150px;
+                margin-left: -150px;
+            }
+
+            .heart-background::before,
+            .heart-background::after {
+                width: 300px; /* Larger size for bigger screens */
+                height: 300px; /* Larger size for bigger screens */
+            }
+
+            .heart-background::before {
+                top: -150px;
+            }
+
+            .heart-background::after {
+                left: 150px;
+            }
+
+            h1 {
+                font-size: 4em; /* Fixed size for desktop */
+            }
+
+            h2 {
+                font-size: 2em; /* Fixed size for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-background"></div> <!-- Heart in the background -->
+    <div class="container">
+        <h1>Akhil ❤ Bhavishya</h1>
+        <h2>A love that lasts forever</h2>
+    </div>
+</body>
+</html>
